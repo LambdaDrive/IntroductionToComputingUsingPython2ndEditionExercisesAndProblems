@@ -1,0 +1,2 @@
+The is a file with no duplicate. None whatsoever.
+You may try to find duplicates but you'll never see them.

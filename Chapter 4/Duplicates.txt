@@ -1,0 +1,2 @@
+This is a file with a duplicate. Just one.
+You may try to find another but you'll never see it.
