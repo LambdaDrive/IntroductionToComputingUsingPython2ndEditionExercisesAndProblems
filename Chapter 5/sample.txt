@@ -1,0 +1,4 @@
+This is a sample text file. This file contains
+a sample text but no sample or text. Text is in
+this file.
+
