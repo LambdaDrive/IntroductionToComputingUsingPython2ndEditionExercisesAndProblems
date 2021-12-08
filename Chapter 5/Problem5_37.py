@@ -1,5 +1,4 @@
 def mssl(intlist):
-    soma = 0
     bigger = []
     for i in range(len(intlist)):
         for a in range(len(intlist), 0, -1):
