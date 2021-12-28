@@ -1,16 +1,6 @@
 def letter2number(grade):
-    number = 0
-    if grade[0] == 'A':
-        number = 4
-    if grade[0] == 'B':
-        number = 3
-    if grade[0] == 'C':
-        number = 2
-    if grade[0] == 'D':
-        number = 1
-    if len(grade) > 1:
-        if grade[1] == '+':
-            number += 0.3
-        if grade[1] == '-':
-            number -= 0.3
+    dicgrade = {'A+': 4.3, 'A': 4, 'A-':3.7, 'B+': 3.3, 'B':3, 'B-':2.7, 'C+':2.3,
+                'C':2,'C-':1.7, 'D+':1.3, 'D':1, 'D-':0.7, 'F+':0.3, 'F':0}
+    number = dicgrade[grade]    
+       
     return number
