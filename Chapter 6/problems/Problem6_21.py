@@ -2,7 +2,7 @@ def ticker(filename):
     file = open(filename)
     content = file.read()
     file.close()
-    content.splitlines()
+    content = content.splitlines()
     dictionary = {}
     for i in range(0, len(content)-1, 2):
         dictionary[content[i]] = content[i+1]
