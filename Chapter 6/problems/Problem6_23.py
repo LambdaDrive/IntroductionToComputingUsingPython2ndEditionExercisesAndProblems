@@ -2,12 +2,15 @@ def scaryDict(filename):
     file = open(filename)
     content = file.read()
     file.close()
-    for symbol in '!?,;.-"()[]1234567890':
+    for symbol in '!?,;.-"()[]1234567890_´`':
         content = content.replace(symbol, '')
+    content = content.replace("'", '')
+    content = content.lower()
     content = content.split()
     for word in content:            
         if len(word) < 3:
             content.remove(word)
+        
     content = list(set(content))
     content.sort()    
     newfile = ''
