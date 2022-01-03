@@ -5,12 +5,10 @@ def networks(nstudents,listuple):
         if len(dic) < 1:
             dic[ngroups] = set(tupla)
         elif len(dic) >= 1:
-            if tupla in dic[ngroups]:
-                for number in tupla:
-                    if number not in dic[ngroups]:
-                        dic[ngroups].add(number)
-            else:
+            if set(tupla).isdisjoint(dic[ngroups]):
                 ngroups += 1
-                dic[ngroups] = set(tupla)
+                dic[ngroups] = set(tupla)    
+            else:                
+                dic[ngroups] = dic[ngroups].union(set(tupla).difference(dic[ngroups]))
     for i in range(len(dic)):
         print('Social network {} is {}'.format(i, dic[i]))
