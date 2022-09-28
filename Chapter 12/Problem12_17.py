@@ -6,4 +6,35 @@
 import re
 import sqlite3
 
+def frequent(textfile):
+    
+    arquivo = open(textfile)
+    content = arquivo.read()
+    arquivo.close()
 
+    listwords = re.findall('[a-zA-Z]*', content)
+    
+    contdict = dict()
+    
+    for word in listwords:
+        if word == '':
+            pass
+        else:
+            if word not in contdict.keys():
+                contdict[word] = 1
+            else:
+                contdict[word] += 1
+    
+    listfreq = []
+    
+    for key in contdict.keys():
+        listfreq.append((key, contdict[key]))
+    
+    con = sqlite3.connect('frequencydatabase.db')
+    cur = con.cursor()
+
+    cur.execute("CREATE TABLE Wordcounts(Word, Freq)")
+    cur.executemany("INSERT INTO Wordcounts VALUES(?, ?)", listfreq)
+
+    con.commit()
+    con.close()
